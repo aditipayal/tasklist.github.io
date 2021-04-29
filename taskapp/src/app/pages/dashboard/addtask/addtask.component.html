@@ -1,0 +1,58 @@
+
+<div class="container my-sm-auto addtask">
+
+<div class="card text-center">
+    <div class="card-header">
+        <h1>Add Task</h1>
+     </div>
+    <div class="card-body">
+        <form [formGroup] = "addtaskform" (ngSubmit)= addtask()>
+            <div class="form-group">
+                <label>sno</label><br>
+                <input type="text" name="sno" class = "form-control" formControlName="sno"/>
+            </div>
+            <div class="form-group">
+                <label>TaskName</label><br>
+                <input type="text" name="taskname" class="form-control" formControlName="taskname"/>
+            </div>
+            <div class="form-group">
+                <label>TaskLabels</label><br>
+                <select name="tasklabels" class="form-control" formControlName="tasklabels">
+                    <option>Select Option</option>
+                    <option>Personal</option>
+                    <option>Work</option>
+                    <option>Shopping</option>
+                    <option>Others..</option>
+                 </select>
+            </div>
+            <div class="form-group">
+                <label>TaskDescription</label><br>
+                <textarea  name = "taskdescription" class = "form-control" formControlName="taskdescription"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Date Added</label><br>
+                <input type="date" name="dateadded"  class= "form-control" formControlName="dateadded"/>
+            </div>
+            <div class="form-group"><br>
+                <label>Date Completion</label><br>
+               <input type = "date" name = "datecompletion" class="form-control" formControlName="datecompletion"/>
+            </div>
+            <div class="form-group">
+                <label>Status</label><br>
+                <select name="status" class="form-control" formControlName="status">
+                    <option>Select Option</option>
+                    <option>New</option>
+                    <option>InProgress</option>
+                    <option>Complete</option>
+                 </select>
+            </div>
+            <input type="submit" value="Submit" class=" btn btn-success">
+        </form>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+
+</div>
+

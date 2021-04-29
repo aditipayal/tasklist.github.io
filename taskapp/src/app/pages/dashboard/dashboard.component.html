@@ -1,0 +1,33 @@
+<body>
+<input type = "checkbox" id="check">
+ <label for= "check">
+   <i class="icon-align-justify" id="btn"></i>
+   <i class="icon-align-right" id="cancel"></i>
+ </label>
+<div class = "sidebar">
+  <header>Welcome to ToDo</header>
+    <ul>
+      <li>
+        <a routerLink ='/dashboard'><i class="icon-user"></i>&nbsp;&nbsp;{{uid}}</a>
+      </li>
+      <li>
+        <a routerLink = "task"><i class = "icon-tasks"></i>&nbsp;&nbsp;Your Task</a>
+      </li>
+      <li>
+        <a routerLink = "addtask"><i class = "icon-pencil"></i>&nbsp;&nbsp;Add Task</a>
+      </li>
+      <li>
+        <a routerLink ="Feedback"><i class = "icon-comment"></i>&nbsp;&nbsp;Feedback</a>
+      </li>
+      <li>
+        <a routerLink="changepassword"><i class = "icon-pencil"></i>&nbsp;&nbsp;Change Password</a>
+      </li>
+      <li>
+        <a href="#" (click) = logout()><i class = "icon-fixed-width icon-ban-circle"></i>&nbsp;&nbsp;Logout</a>
+      </li>
+  </ul>
+</div>
+<section>
+  <router-outlet></router-outlet>
+</section>
+</body>

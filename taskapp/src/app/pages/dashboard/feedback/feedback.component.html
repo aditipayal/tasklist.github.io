@@ -1,0 +1,45 @@
+<div class="container">
+    <h1 class="text-center">Feedback Panel</h1>
+    <form [formGroup]="feedform" (ngSubmit) = "givefeed()">
+        <div *ngIf = 'errmsg' class="alert alert-danger">
+            {{errmsg}}
+        </div>
+        <div class= "form-group">
+            <label>Name</label>
+            <input type="text" name="feedname" class="form-control" formControlName="feedname">
+            <div *ngIf="feedform.controls.feedname.invalid && feedform.controls.feedname.touched" class="alert alert-danger">
+                <div *ngIf="feedform.controls.feedname.errors.required">
+                    Name is Required.
+                </div>
+            </div>
+        </div>
+        <div class= "form-group">
+            <label>Email</label>
+            <input type="email" name="feedemail" class="form-control" formControlName="feedemail">
+            <div *ngIf="feedform.controls.feedemail.invalid && feedform.controls.feedemail.touched" class="alert alert-danger">
+                <div *ngIf="feedform.controls.feedemail.errors.required">
+                    Email is Required.
+                </div>
+            </div>
+        </div>
+        <div class= "form-group">
+            <label>Mobile</label>
+            <input type="number" name="feedmobile" class="form-control" formControlName="feedmobile">
+            <div *ngIf="feedform.controls.feedmobile.invalid && feedform.controls.feedmobile.touched" class="alert alert-danger">
+                <div *ngIf="feedform.controls.feedmobile.errors.required">
+                    Mobile is Required.
+                </div>
+            </div>
+        </div>
+        <div class= "form-group">
+            <label>Message</label>
+            <textarea class="form-control" formControlName="feedmessage"></textarea>
+            <div *ngIf="feedform.controls.feedmessage.invalid && feedform.controls.feedmessage.touched" class="alert alert-danger">
+                <div *ngIf="feedform.controls.feedmessage.errors.required">
+                 Message is Required.
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-success" [disabled]="feedform.invalid"/>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<h1 class="taskheading text-center"> Task Table</h1>
+<div class="container tasktable">
+<table class="table">
+    <tr>
+        <td colspan="6" class=" text-center">
+        </td>
+    </tr>
+    <tr>
+        <th>S.no</th>
+        <th>Task</th>
+        <th>Purpose</th>
+        <th>Description</th>
+        <th>Date Added</th>
+        <th>Date Completed</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor ="let c of taskData;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{c.taskname|uppercase}}</td>
+        <td>{{c.tasklabels|uppercase}}</td>
+        <td>{{c.taskdescription}}</td>
+        <td>{{c.dateadded|date}}</td>
+        <td>{{c.datecompletion|date}}</td>
+        <td>{{c.status}}</td>
+        <td><button class="btn btn-success edit"><a routerLink="../edittask/{{c._id}}"><i class = icon-pencil></i>&nbsp;&nbsp;Edit</a></button>&nbsp;&nbsp;
+        <button class="btn btn-danger delete"><a href="javascript:void(0)" (click)="deltask(c._id)"><i class = icon-trash></i>&nbsp;&nbsp;Delete</a></button></td>
+    </tr>
+</table>
+</div>
